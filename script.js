@@ -152,6 +152,110 @@ const PI_DIGITS =
   });
 })();
 
+// ========== SACRED FIRE ==========
+(function initFire() {
+  const canvas = document.getElementById('fire-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let W, H;
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    W = canvas.width = Math.floor(rect.width);
+    H = canvas.height = Math.floor(rect.height);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Particle-based fire
+  const particles = [];
+  const maxParticles = 220;
+
+  function spawnParticle() {
+    // Spread across entire width
+    const x = Math.random() * W;
+    particles.push({
+      x: x,
+      y: H + 5,
+      originX: x,
+      vx: (Math.random() - 0.5) * 0.8,
+      vy: -(1.5 + Math.random() * 2.5),
+      life: 1,
+      decay: 0.008 + Math.random() * 0.012,
+      size: 15 + Math.random() * 25,
+      drift: (Math.random() - 0.5) * 0.02,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Spawn new particles
+    for (let i = 0; i < 4; i++) {
+      if (particles.length < maxParticles) spawnParticle();
+    }
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx += p.drift;
+      p.vy *= 0.995;
+      p.life -= p.decay;
+
+      if (p.life <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+
+      // Color: bright gold -> orange -> dark red -> smoke
+      let r, g, b, a;
+      if (p.life > 0.7) {
+        // Bright core: gold-white
+        const t = (p.life - 0.7) / 0.3;
+        r = 255;
+        g = 200 + t * 55;
+        b = 80 + t * 120;
+        a = p.life * 0.6;
+      } else if (p.life > 0.4) {
+        // Mid: orange
+        const t = (p.life - 0.4) / 0.3;
+        r = 200 + t * 55;
+        g = 80 + t * 120;
+        b = 10 + t * 70;
+        a = p.life * 0.5;
+      } else {
+        // Dying: dark red to smoke
+        const t = p.life / 0.4;
+        r = 80 + t * 120;
+        g = 20 + t * 60;
+        b = 5 + t * 5;
+        a = p.life * 0.35;
+      }
+
+      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * p.life);
+      gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${a})`);
+      gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Subtle glow at the base
+    const baseGlow = ctx.createLinearGradient(0, H, 0, H - 60);
+    baseGlow.addColorStop(0, 'rgba(212, 120, 40, 0.12)');
+    baseGlow.addColorStop(1, 'transparent');
+    ctx.fillStyle = baseGlow;
+    ctx.fillRect(0, H - 60, W, 60);
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+
 // ========== PI PRACTICE ==========
 (function initPractice() {
   const decimalsEl = document.getElementById('pi-decimals');
