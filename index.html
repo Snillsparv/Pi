@@ -6,17 +6,16 @@
   <title>Pi-afton — 13 mars</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Falling pi digits background -->
-  <canvas id="pi-rain"></canvas>
+  <!-- Sacred geometry background -->
+  <canvas id="sacred-geometry"></canvas>
 
-  <!-- Glowing circle decoration -->
+  <!-- Candlelight glow -->
   <div class="glow-orb glow-orb-1"></div>
   <div class="glow-orb glow-orb-2"></div>
-  <div class="glow-orb glow-orb-3"></div>
 
   <!-- ========== NAV ========== -->
   <nav class="nav" id="nav">
@@ -40,13 +39,30 @@
   <!-- ========== HERO ========== -->
   <header class="hero">
     <div class="hero-content">
+      <div class="hero-circle" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="hero-svg">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="url(#gold-grad)" stroke-width="1" opacity="0.4"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="url(#gold-grad)" stroke-width="0.5" opacity="0.25"/>
+          <circle cx="100" cy="100" r="50" fill="none" stroke="url(#gold-grad)" stroke-width="0.5" opacity="0.15"/>
+          <!-- Pentagram -->
+          <polygon points="100,12 123,72 188,72 135,110 155,170 100,138 45,170 65,110 12,72 77,72" fill="none" stroke="url(#gold-grad)" stroke-width="0.5" opacity="0.12"/>
+          <defs>
+            <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d4a574"/>
+              <stop offset="50%" stop-color="#f0d48a"/>
+              <stop offset="100%" stop-color="#d4a574"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="pi-symbol" aria-hidden="true">π</div>
-      <h1 class="glitch" data-text="Piafton">Piafton</h1>
+      <h1>Piafton</h1>
       <p class="hero-date">
         <span class="date-highlight">13 mars</span> — dagen före pidagen
       </p>
       <p class="hero-sub">3.14159265358979323846264338327950288419716939937510...</p>
-      <a href="#om" class="cta-btn">Upptäck mer</a>
+      <div class="hero-ornament">&#x2726; &#x2726; &#x2726;</div>
+      <a href="#om" class="cta-btn">Stig in i cirkeln</a>
     </div>
     <div class="scroll-indicator">
       <span></span>

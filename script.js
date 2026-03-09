@@ -11,49 +11,106 @@ const PI_DIGITS =
   '5024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303' +
   '5982534904287554687311595628638823537875937519577818577805321712268066130019278766111959092164201989';
 
-// ========== MATRIX-STYLE PI RAIN ==========
-(function initPiRain() {
-  const canvas = document.getElementById('pi-rain');
+// ========== SACRED GEOMETRY BACKGROUND ==========
+(function initSacredGeometry() {
+  const canvas = document.getElementById('sacred-geometry');
   const ctx = canvas.getContext('2d');
 
-  let width, height, columns, drops;
+  let width, height;
 
   function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
-    const fontSize = 14;
-    columns = Math.floor(width / fontSize);
-    drops = new Array(columns).fill(1);
   }
 
   resize();
   window.addEventListener('resize', resize);
 
-  const digits = '0123456789\u03C0e\u03C6\u221E\u2211\u222B';
+  // Floating sacred symbols
+  const symbols = [];
+  const glyphs = '\u03C0\u2206\u03A6\u03A9\u221E\u2220\u25CB\u2299\u2609\u2295\u25B3\u2641';
+  const symbolCount = Math.min(25, Math.floor(width / 60));
 
-  function draw() {
-    ctx.fillStyle = 'rgba(10, 10, 26, 0.06)';
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.font = '14px "Space Mono", monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-      const char = digits[Math.floor(Math.random() * digits.length)];
-      const x = i * 14;
-      const y = drops[i] * 14;
-
-      const hue = 180 + (i / columns) * 100;
-      ctx.fillStyle = `hsla(${hue}, 100%, 70%, 0.25)`;
-      ctx.fillText(char, x, y);
-
-      if (y > height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
+  for (let i = 0; i < symbolCount; i++) {
+    symbols.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      char: glyphs[Math.floor(Math.random() * glyphs.length)],
+      size: 12 + Math.random() * 16,
+      speed: 0.15 + Math.random() * 0.3,
+      drift: (Math.random() - 0.5) * 0.3,
+      opacity: 0.04 + Math.random() * 0.06,
+      phase: Math.random() * Math.PI * 2,
+    });
   }
 
-  setInterval(draw, 50);
+  // Slowly rotating concentric circles
+  let rotation = 0;
+
+  function drawCirclePattern(cx, cy, maxR, time) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(rotation);
+
+    for (let r = 60; r < maxR; r += 80) {
+      const alpha = 0.015 * (1 - r / maxR);
+      ctx.strokeStyle = `rgba(212, 165, 74, ${alpha})`;
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Rotating inscribed triangle
+    const triR = maxR * 0.4;
+    ctx.strokeStyle = 'rgba(212, 165, 74, 0.02)';
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    for (let i = 0; i <= 3; i++) {
+      const angle = (i / 3) * Math.PI * 2 - Math.PI / 2;
+      const x = Math.cos(angle) * triR;
+      const y = Math.sin(angle) * triR;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    rotation += 0.0003;
+
+    // Draw sacred circle patterns
+    drawCirclePattern(width * 0.2, height * 0.3, 250, rotation);
+    drawCirclePattern(width * 0.8, height * 0.7, 200, rotation * 0.7);
+    drawCirclePattern(width * 0.5, height * 0.5, 300, rotation * 0.5);
+
+    // Draw floating symbols
+    for (const s of symbols) {
+      s.y -= s.speed;
+      s.x += s.drift + Math.sin(s.phase + rotation * 10) * 0.2;
+      s.phase += 0.005;
+
+      if (s.y < -30) {
+        s.y = height + 30;
+        s.x = Math.random() * width;
+      }
+      if (s.x < -30) s.x = width + 30;
+      if (s.x > width + 30) s.x = -30;
+
+      const flicker = 0.8 + Math.sin(s.phase * 3) * 0.2;
+      ctx.font = `${s.size}px "EB Garamond", serif`;
+      ctx.fillStyle = `rgba(212, 165, 74, ${s.opacity * flicker})`;
+      ctx.fillText(s.char, s.x, s.y);
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
 })();
 
 // ========== NAV ==========
@@ -62,17 +119,14 @@ const PI_DIGITS =
   const toggle = document.getElementById('nav-toggle');
   const links = document.getElementById('nav-links');
 
-  // Scrolled state
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Mobile toggle
   toggle.addEventListener('click', () => {
     links.classList.toggle('open');
   });
 
-  // Close on link click
   links.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', () => {
       links.classList.remove('open');
@@ -163,10 +217,10 @@ const PI_DIGITS =
     }
 
     if (correctCount === answer.length) {
-      feedback.textContent = 'Perfekt! Alla ' + correctCount + ' decimaler r\u00E4tt!';
+      feedback.textContent = 'Fullkomligt! Alla ' + correctCount + ' decimaler korrekt.';
       feedback.className = 'quiz-feedback correct';
     } else {
-      feedback.textContent = correctCount + ' r\u00E4tt av ' + answer.length + '. Fel p\u00E5 decimal ' + (correctCount + 1) + ' \u2014 du skrev ' + answer[correctCount] + ', r\u00E4tt svar var ' + PI_DIGITS[correctCount] + '.';
+      feedback.textContent = correctCount + ' r\u00E4tt av ' + answer.length + '. Vilse vid decimal ' + (correctCount + 1) + ' \u2014 du skrev ' + answer[correctCount] + ', sanningen \u00E4r ' + PI_DIGITS[correctCount] + '.';
       feedback.className = 'quiz-feedback wrong';
     }
   });
@@ -181,7 +235,7 @@ const PI_DIGITS =
   function getNextPiafton() {
     const now = new Date();
     const year = now.getFullYear();
-    let piafton = new Date(year, 2, 13); // March 13
+    let piafton = new Date(year, 2, 13);
 
     if (now >= piafton) {
       const endOfDay = new Date(year, 2, 13, 23, 59, 59, 999);
@@ -199,10 +253,10 @@ const PI_DIGITS =
     const diff = target - now;
 
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '\u{1F389}';
+      document.getElementById('cd-days').textContent = '\u2726';
       document.getElementById('cd-hours').textContent = 'PI';
       document.getElementById('cd-minutes').textContent = 'AFTON';
-      document.getElementById('cd-seconds').textContent = '\u{1F389}';
+      document.getElementById('cd-seconds').textContent = '\u2726';
       return;
     }
 
