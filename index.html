@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pi-afton — 14 mars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Falling pi digits background -->
+  <canvas id="pi-rain"></canvas>
+
+  <!-- Glowing circle decoration -->
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="pi-symbol" aria-hidden="true">π</div>
+      <h1 class="glitch" data-text="Pi-afton">Pi-afton</h1>
+      <p class="hero-date">
+        <span class="date-highlight">14 mars</span> — den internationella Pi-dagen
+      </p>
+      <p class="hero-sub">3.14159265358979323846264338327950288419716939937510...</p>
+      <a href="#om" class="cta-btn">Upptäck mer</a>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </header>
+
+  <main>
+    <section id="om" class="section section-about">
+      <div class="container">
+        <h2 class="section-title">Vad är Pi-afton?</h2>
+        <div class="card glass-card">
+          <p>Pi-afton är en kväll tillägnad det mest fascinerande talet i matematiken — <strong>π</strong>. Varje år den <strong>14 mars</strong> (3/14) samlas vi för att fira, tävla och förundras över pi.</p>
+          <p>Pi (π ≈ 3,14159…) är förhållandet mellan en cirkels omkrets och dess diameter. Det är ett irrationellt tal — dess decimaler fortsätter i all oändlighet utan att upprepa sig. Matematiker har beräknat biljontals decimaler, men mysteriet består.</p>
+          <p>Traditionen startade som en kväll bland vänner med en enkel idé: <em>hur kul kan man egentligen ha med ett tal?</em> Svaret visade sig vara — väldigt kul.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="section section-program">
+      <div class="container">
+        <h2 class="section-title">Kvällens program</h2>
+        <div class="timeline">
+          <div class="timeline-item" data-icon="📖">
+            <div class="card glass-card">
+              <h3>Pi-beln</h3>
+              <p>Kvällen inleds med högläsning ur <strong>Pi-beln</strong> — en samling heliga texter om pi, matematik och cirklar. Stämningsfullt och högtidligt.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-icon="🍕">
+            <div class="card glass-card">
+              <h3>Pi-mat</h3>
+              <p>Självklart serveras <strong>pi-mat</strong> — runda rätter, pajer (pie!), pizza och allt cirkelformat vi kan hitta. Bonuspoäng för mat med exakt 3,14 cm diameter.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-icon="📺">
+            <div class="card glass-card">
+              <h3>Pi-Pi Långstrump</h3>
+              <p>Filmkväll med <strong>Pi-Pi Långstrump</strong> — Sveriges starkaste flicka i en pi-tematisk tolkning. En klassiker som aldrig blir gammal.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-icon="🧠">
+            <div class="card glass-card">
+              <h3>Memoreringstävling</h3>
+              <p>Vem kan flest decimaler? Tävla mot varandra i att rabbla pi:s decimaler utantill. Det nuvarande svenska rekordet är <strong>24&nbsp;063 decimaler</strong>. Hur många klarar du?</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-icon="🎅">
+            <div class="card glass-card">
+              <h3>Einstein delar ut presenter</h3>
+              <p>Traditionen trogen dyker <strong>Albert Einstein</strong> (som föddes den 14 mars 1879!) upp och delar ut pi-relaterade presenter till alla deltagare.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trana" class="section section-practice">
+      <div class="container">
+        <h2 class="section-title">Träna ditt pi-minne</h2>
+        <div class="card glass-card practice-card">
+          <p class="practice-intro">Testa hur många decimaler av pi du kan memorera. Klicka på "Visa" för att se svaret, sedan "Dölj" för att träna.</p>
+          <div class="pi-practice">
+            <div class="pi-display" id="pi-display">
+              <span class="pi-int">3.</span><span class="pi-decimals" id="pi-decimals"></span>
+            </div>
+            <div class="practice-controls">
+              <button id="btn-show" class="btn btn-primary">Visa decimaler</button>
+              <button id="btn-hide" class="btn btn-secondary" style="display:none">Dölj</button>
+              <div class="decimal-slider">
+                <label for="decimal-count">Antal decimaler: <span id="decimal-label">50</span></label>
+                <input type="range" id="decimal-count" min="10" max="1000" value="50" step="10">
+              </div>
+            </div>
+          </div>
+          <div class="quiz-section">
+            <h3>Testa dig själv</h3>
+            <p>Skriv in så många decimaler du kan:</p>
+            <input type="text" id="pi-input" class="pi-input" placeholder="14159265..." autocomplete="off" spellcheck="false">
+            <div class="quiz-feedback" id="quiz-feedback"></div>
+            <button id="btn-check" class="btn btn-primary">Kontrollera</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fakta" class="section section-facts">
+      <div class="container">
+        <h2 class="section-title">Fascinerande pi-fakta</h2>
+        <div class="facts-grid">
+          <div class="card glass-card fact-card">
+            <div class="fact-number">∞</div>
+            <p>Pi är irrationellt — decimalerna tar aldrig slut och bildar aldrig ett upprepande mönster.</p>
+          </div>
+          <div class="card glass-card fact-card">
+            <div class="fact-number">~2600</div>
+            <p>Pi har beräknats sedan det antika Babylon, ungefär 2600 år sedan.</p>
+          </div>
+          <div class="card glass-card fact-card">
+            <div class="fact-number">105 biljoner</div>
+            <p>Nuvarande rekordet för beräknade pi-decimaler — satt med en superdator 2024.</p>
+          </div>
+          <div class="card glass-card fact-card">
+            <div class="fact-number">70 000+</div>
+            <p>Världsrekordet i att memorera pi-decimaler, satt av Rajveer Meena från Indien 2015.</p>
+          </div>
+          <div class="card glass-card fact-card">
+            <div class="fact-number">1706</div>
+            <p>Året då den walesiske matematikern William Jones först använde symbolen π.</p>
+          </div>
+          <div class="card glass-card fact-card">
+            <div class="fact-number">14 mars</div>
+            <p>Pi-dagen — och Albert Einsteins födelsedag! Inte en slump, utan ödet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown" class="section section-countdown">
+      <div class="container">
+        <h2 class="section-title">Nedräkning till nästa Pi-dag</h2>
+        <div class="countdown-display" id="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-days">--</span>
+            <span class="countdown-label">dagar</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-hours">--</span>
+            <span class="countdown-label">timmar</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-minutes">--</span>
+            <span class="countdown-label">minuter</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-seconds">--</span>
+            <span class="countdown-label">sekunder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-pi" aria-hidden="true">π</div>
+      <p>Pi-afton — firar π sedan tidernas begynnelse</p>
+      <p class="footer-small">3.14159265358979323846264338327950288419716939937510...</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
