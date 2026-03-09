@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pi-afton — 14 mars</title>
+  <title>Pi-afton — 13 mars</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,12 +18,32 @@
   <div class="glow-orb glow-orb-2"></div>
   <div class="glow-orb glow-orb-3"></div>
 
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">π</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#om">Om</a></li>
+        <li><a href="#pimat">Pimat</a></li>
+        <li><a href="#pibeln">Pibeln</a></li>
+        <li><a href="#pisalmer">Pisalmer</a></li>
+        <li><a href="#flams">Flams &amp; trams</a></li>
+        <li><a href="#trana">Träna pi</a></li>
+        <li><a href="#countdown">Nedräkning</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
   <header class="hero">
     <div class="hero-content">
       <div class="pi-symbol" aria-hidden="true">π</div>
-      <h1 class="glitch" data-text="Pi-afton">Pi-afton</h1>
+      <h1 class="glitch" data-text="Piafton">Piafton</h1>
       <p class="hero-date">
-        <span class="date-highlight">14 mars</span> — den internationella Pi-dagen
+        <span class="date-highlight">13 mars</span> — dagen före pidagen
       </p>
       <p class="hero-sub">3.14159265358979323846264338327950288419716939937510...</p>
       <a href="#om" class="cta-btn">Upptäck mer</a>
@@ -34,55 +54,236 @@
   </header>
 
   <main>
+    <!-- ========== OM PIAFTON ========== -->
     <section id="om" class="section section-about">
       <div class="container">
-        <h2 class="section-title">Vad är Pi-afton?</h2>
+        <h2 class="section-title">Vad är piafton?</h2>
         <div class="card glass-card">
-          <p>Pi-afton är en kväll tillägnad det mest fascinerande talet i matematiken — <strong>π</strong>. Varje år den <strong>14 mars</strong> (3/14) samlas vi för att fira, tävla och förundras över pi.</p>
-          <p>Pi (π ≈ 3,14159…) är förhållandet mellan en cirkels omkrets och dess diameter. Det är ett irrationellt tal — dess decimaler fortsätter i all oändlighet utan att upprepa sig. Matematiker har beräknat biljontals decimaler, men mysteriet består.</p>
-          <p>Traditionen startade som en kväll bland vänner med en enkel idé: <em>hur kul kan man egentligen ha med ett tal?</em> Svaret visade sig vara — väldigt kul.</p>
+          <p>I det numera huvudsakligen cirkuläriserade Sverige firas, som vi vet, av de allra flesta <strong>piafton</strong> den 13 mars, dagen före pidagen.</p>
+          <p>För de som inte har vuxit upp med denna tradition eller bara vill ha en checklista för att se till att man får med allt som enligt seden bör inträffa under denna underbara afton har vi här sammanställt de viktigaste delarna i korthet!</p>
         </div>
       </div>
     </section>
 
-    <section id="program" class="section section-program">
+    <!-- ========== PIMAT ========== -->
+    <section id="pimat" class="section section-pimat">
       <div class="container">
-        <h2 class="section-title">Kvällens program</h2>
-        <div class="timeline">
-          <div class="timeline-item" data-icon="📖">
-            <div class="card glass-card">
-              <h3>Pi-beln</h3>
-              <p>Kvällen inleds med högläsning ur <strong>Pi-beln</strong> — en samling heliga texter om pi, matematik och cirklar. Stämningsfullt och högtidligt.</p>
-            </div>
+        <h2 class="section-title">Pimaten</h2>
+        <div class="card glass-card">
+          <p>Det kanske viktigaste på det svenska pibordet är <strong>pimaten</strong>! En vanlig pimiddag ser oftast ut så här:</p>
+        </div>
+        <div class="menu-grid">
+          <div class="card glass-card menu-card">
+            <div class="menu-label">Förrätt</div>
+            <h3>Semlor</h3>
+            <p>(så runda som möjligt)</p>
           </div>
-          <div class="timeline-item" data-icon="🍕">
-            <div class="card glass-card">
-              <h3>Pi-mat</h3>
-              <p>Självklart serveras <strong>pi-mat</strong> — runda rätter, pajer (pie!), pizza och allt cirkelformat vi kan hitta. Bonuspoäng för mat med exakt 3,14 cm diameter.</p>
-            </div>
+          <div class="card glass-card menu-card">
+            <div class="menu-label">Huvudrätt</div>
+            <h3>Tre sorters paj</h3>
+            <p>till exempel svamppaj, grönkålspaj och matpaj</p>
           </div>
-          <div class="timeline-item" data-icon="📺">
-            <div class="card glass-card">
-              <h3>Pi-Pi Långstrump</h3>
-              <p>Filmkväll med <strong>Pi-Pi Långstrump</strong> — Sveriges starkaste flicka i en pi-tematisk tolkning. En klassiker som aldrig blir gammal.</p>
-            </div>
+          <div class="card glass-card menu-card">
+            <div class="menu-label">Efterrätt</div>
+            <h3>Pannkakor</h3>
+            <p>(med t.ex. nougatkräm)</p>
           </div>
-          <div class="timeline-item" data-icon="🧠">
-            <div class="card glass-card">
-              <h3>Memoreringstävling</h3>
-              <p>Vem kan flest decimaler? Tävla mot varandra i att rabbla pi:s decimaler utantill. Det nuvarande svenska rekordet är <strong>24&nbsp;063 decimaler</strong>. Hur många klarar du?</p>
-            </div>
+        </div>
+        <div class="card glass-card" style="margin-top: 1.5rem;">
+          <p>Enligt Pibeln var det denna enkla måltid Arkimedes <em>(orubbade varde hans cirklar)</em> förtärde innan han dödades av de invaderande romarna. Den anses symbolisera den heliga <strong>pienigheten</strong> eftersom den innehåller 3,14 pajer (semlor anses enligt denna tolkning till ca 14% kunna sägas vara pajer). Pannkakorna är ett modernare tillägg på svenskarnas pibord.</p>
+          <p>Det vanliga är att man serverar maten antingen på ett <strong>runt bord</strong>, eller, om sådant saknas, placerad inuti en <strong>rockring</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PIBELN ========== -->
+    <section id="pibeln" class="section section-pibeln">
+      <div class="container">
+        <h2 class="section-title">Pibeln</h2>
+        <p class="section-intro">Pibelläsning är centralt inom traditionellt piaftonsfirande. Idag kan många barn sucka högt när det är dags för mor eller far att läsa högt ur Pievengeliet, men för de äldre i familjen är detta oftast kvällens mest högtidliga stund.</p>
+
+        <!-- Trosbekännelsen -->
+        <div class="card glass-card scripture-card">
+          <h3 class="scripture-title">Trosbekännelsen</h3>
+          <p class="scripture-ref">Kapitel 92 i Pibeln</p>
+          <p class="scripture-note">Innan man börjar äta läser man traditionellt unisont upp Trosbekännelsen:</p>
+          <div class="scripture-text">
+            <p><sup>92</sup></p>
+            <p><sup>1</sup>Vi tror på pi allsmäktig, svaret på Universums, evighetens och själva livets gåta.</p>
+            <p><sup>2</sup>Pi vet allt. I pi står allt skrivet.</p>
+            <p><sup>3</sup>Vi tror ock på Euklides, hennes skapare, vår Herre, vilken har avlat den heliga Matematiken, född av världsalltets regelbundenhet, pinad av osnutna skolungdomar, korsfäst, död och begraven, nederstigen till förstoppande utantillinlärning, i tredje millenniet uppstånden igen ifrån de döda, uppstigen till himmelen, sittande på allsmäktig Euklides Faders högra sida, därifrån igenkommande till att döma levande och döda.</p>
+            <p><sup>4</sup>Vi må förgås, men pi kommer att finnas för alltid.</p>
+            <p>&nbsp;</p>
+            <p><sup>5</sup>Vi tror ock till ungefär en sjundedel på relativitetsteorin (så mycket av den vi begriper) och kvantmekaniken.</p>
+            <p><sup>6</sup>Dessa, pi, Euklides, Matematiken och 0,141592… av de moderna teorierna om Universum, utgör sammantaget pienigheten, de heligas samfund, slarvfelens förlåtelse, de dödas uppståndelse och ett evigt liv.</p>
+            <p><sup>7</sup>Så pi, som är i varje cirkel, helgat varde ditt namn. <sup>8</sup>Ty riket är ditt, och härligheten och alla decimalerna, i evighet.</p>
+            <p class="scripture-amen">Arkimedes.</p>
           </div>
-          <div class="timeline-item" data-icon="🎅">
-            <div class="card glass-card">
-              <h3>Einstein delar ut presenter</h3>
-              <p>Traditionen trogen dyker <strong>Albert Einstein</strong> (som föddes den 14 mars 1879!) upp och delar ut pi-relaterade presenter till alla deltagare.</p>
-            </div>
+        </div>
+
+        <!-- Pievangeliet -->
+        <div class="card glass-card scripture-card">
+          <h3 class="scripture-title">Pievangeliet</h3>
+          <p class="scripture-ref">Kapitel 314</p>
+          <div class="scripture-text pievangeliet-text">
+            <p class="pi-verse"><sup>13</sup> , 1 4 1 5 9 2 6 5 3 5 8 9 7 9 2</p>
+            <p class="pi-verse"><sup>3</sup> 2 3 8 4 6 2 6 4 3 3 8 3 2 7 9 3</p>
+            <p class="pi-verse"><sup>5</sup> 0 2 8 8 4 1 9 7 1 6 9 3 9 9 3 4</p>
+            <p class="pi-verse"><sup>7</sup> 5 1 0 5 8 2 0 9 7 4 9 4 4 5 9 5</p>
+            <p class="pi-verse"><sup>2</sup> 3 0 7 8 1 6 4 0 6 2 8 6 2 0 8 6</p>
+            <p class="pi-verse"><sup>9</sup> 9 8 6 2 8 0 3 4 8 2 5 3 4 2 1 7</p>
+            <p class="pi-verse"><sup>1</sup> 7 0 6 7 9 8 2 1 4 8 0 8 6 5 1 8</p>
+            <p class="pi-verse"><sup>3</sup> 2 8 2 3 0 6 6 4 7 0 9 3 8 4 4 9</p>
+            <p class="pi-verse"><sup>6</sup> 0 9 5 5 0 5 8 2 2 3 1 7 2 5 3 10</p>
+            <p class="pi-verse"><sup>5</sup> 9 4 0 8 1 2 8 4 8 1 1 1 7 4 5 11</p>
+            <p class="pi-verse"><sup>0</sup> 2 8 4 1 0 2 7 0 1 9 3 8 5 2 1 12</p>
+            <p class="pi-verse"><sup>1</sup> 0 5 5 5 9 6 4 4 6 2 2 9 4 8 9 13</p>
+            <p class="pi-verse"><sup>5</sup> 4 9 3 0 3 8 1 9 6 4 4 2 8 8 1 14</p>
+            <p class="pi-verse"><sup>0</sup> 9 7 5 6 6 5 9 3 3 4 4 6 1 2 8 15</p>
+            <p class="pi-verse"><sup>4</sup> 7 5 6 4 8 2 3 3 7 8 6 7 8 3 1 16</p>
+            <p class="pi-verse"><sup>6</sup> 5 2 7 1 2 0 1 9 0 9 1 4 5 6 4 17</p>
+            <p class="pi-verse"><sup>8</sup> 5 6 6 9 2 3 4 6 0 3 4 8 6 1 0 18</p>
+            <p class="pi-verse"><sup>4</sup> 5 4 3 2 6 6 4 8 2 1 3 3 9 3 6 19</p>
+            <p class="pi-verse"><sup>0</sup> 7 2 6 0 2 4 9 1 4 1 2 7 3 7 2 20</p>
+            <p class="pi-verse"><sup>4</sup> 5 8 7 0 0 6 6 0 6 3 1.</p>
+          </div>
+        </div>
+
+        <!-- Första Cosebok -->
+        <div class="card glass-card scripture-card">
+          <h3 class="scripture-title">Första Cosebok</h3>
+          <p class="scripture-ref">Skapelseberättelsen</p>
+          <div class="scripture-text">
+            <p><sup>1</sup> <sup>1</sup>I begynnelsen var Euklides.</p>
+            <p><sup>2</sup>Människans världsbild var öde och tom, djupet täcktes av mörker och ingen cirkels omkrets kunde med exakthet beräknas. <sup>3</sup>Euklides sade: "Matematik, bli till!" Och matematiken blev till. Euklides såg att Matematiken var god, och han skilde matematiken från det andra. <sup>4</sup>Euklides kallade Matematiken Geometri, och det andra kallade han dravel. Det blev kväll och det blev morgon. Det var den första dagen.</p>
+            <p><sup>5</sup>Euklides sade: "Matematiken skall bygga på ett antal påståenden, vars sannfärdighet är så uppenbara att de kan tas för självklara." Och det blev så. Och Euklides kallade påståendena för Axiom. Och han såg att de var goda. Det blev kväll och det blev morgon. Det var den andra dagen.</p>
+            <p><sup>6</sup>Euklides sade: "Det fordras att man kan dra en rät linje från en punkt till en annan." Och det blev så. <sup>7</sup>Och han satte ut stjärnorna på himlavalvet och drog räta linjer emellan dem så att det bildades stjärnbilder. Och han såg att det var gott. <sup>8</sup>Och han drog räta linjer mellan två godisändar och skapade på så vis kolasnören. Och han såg att det var jättegott. Det blev sen eftermiddag och det blev morgon. Det var den tredje dagen.</p>
+            <p><sup>9</sup>Euklides sade: "Varje begränsad rät linje kan förlängas obegränsat." Och det blev så. <sup>10</sup>Och han förlängde en rät linje obegränsat i båda riktningar och skapade på så vis tiden. <sup>11</sup>Fast egentligen var den begränsad bakåt eftersom Universum bara är 13,8 miljarder år gammalt. Men det visste han inte då. Det här var alltså omkring år 300 f. Kr. Man visste ju inte så mycket på den tiden. Det blev midnatt och det blev småtimmarna. Det var den fjärde dagen.</p>
+            <p>&nbsp;</p>
+            <p><sup>12</sup>Euklides sade: "Vi skall göra cirklar till vår avbild, lika våra ögon och våra magar. <sup>13</sup>De skall härska över havets fiskar, himlens fåglar, boskapen, alla vilda djur och alla kräldjur som finns på jorden. <sup>14</sup>Och kring varje medelpunkt kan man rita en cirkel med given radie." <sup>15</sup>Euklides skapade cirkeln till människans avbild, till människans avbild skapade han henne. Han skapade två cirklar och lät dem tangera varandra. <sup>16</sup>Han välsignade dem och sade till dem: "Var fruktsamma och föröka er, uppfyll Jorden och omslut den. Härska över havets fiskar och himlens fåglar och över alla djur som myllrar på jorden." <sup>17</sup>Och ekvatorn och latituderna omslöt Jorden och ringar spreds på vattnet. <sup>18</sup>Och alla djur tvingades följa matematikens lagar. <sup>19</sup>Euklides tillade: "Och i dig, cirkel, skall jag gömma svaret på Universums, evighetens och själva livets gåta." <sup>20</sup>Och i cirkeln gömde Euklides pi, mitt framför ögonen på oss allihopa. Det blev tussmörker och det blev vargtimme. Det var den femte dagen.</p>
+            <p><sup>21</sup>Euklides sade: "Alla räta vinklar är lika." Och det blev så. <sup>21</sup>Och Euklides såg att jämställdhet var gott. Men det tog lång tid innan resten av världen såg det. <sup>22</sup>Och den ser det ännu inte, fastän alla räta vinklar sedan dess verkligen är lika. Det blev Netflix-tajm och väckarklockan ringde. Det var den sjätte dagen.</p>
+            <p><sup>23</sup>På den sjunde dagen skulle Euklides egentligen vila men eftersom han var arbetsnarkoman gjorde han inte det, utan steg upp tidigt och sade: "När en rät linje träffar två andra räta linjer, och de båda inre vinklarna på samma sida om den skärande räta linjen är mindre än två räta, så skall de båda räta linjerna, om de förlängs obegränsat, råkas på den sida om den skärande räta linjen som de båda vinklarna ligger som är mindre än två räta." <sup>24</sup>Det märktes att Euklides hade jobbat hårt den här veckan och var lite trött, ty det femte geometriska axiomet var krångligare formulerat än de övriga och har fått en del kritik av senare tids matematiker. Men Euklides såg att det var gott ändå. <sup>25</sup>Det ska ju finnas något för eftervärlden att jobba vidare med också! Så han stod vid sitt påstående. Och det blev så, vad det nu var det innebar.</p>
+            <p><sup>26</sup>Så fullbordades Matematiken och allt var där fanns.</p>
+            <p><sup>27</sup>Detta är berättelsen om hur himmel och jord och pi skapades.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ========== PISALMER ========== -->
+    <section id="pisalmer" class="section section-pisalmer">
+      <div class="container">
+        <h2 class="section-title">Pisalmer</h2>
+        <p class="section-intro">Även pisalmer och pisånger hör förstås piafton till. Här är tre favoriter:</p>
+
+        <div class="card glass-card psalm-card">
+          <h3 class="psalm-title">Tre komma fjorton pepparkaksgubbar</h3>
+          <p class="psalm-ref">Psaltomortalen 3</p>
+          <div class="psalm-text">
+            <p>Vi komma, vi komma, från cirkellandets mitt<br>
+            där vandrar vi runt kring vårt favvo-kägelsnitt<br>
+            Så runda, så runda, vi äro alla tre <em>(komma fjorton)</em><br>
+            med två klot till ögon (och) cylinderhattar me'</p>
+            <p>Tre <em>(komma fjorton)</em> gubbar, tre <em>(komma fjorton)</em> gubbar från cirkellandets rand<br>
+            Piafton vi firar i ringen hand i hand<br>
+            Men tomten och bocken får inte vara me'<br>
+            de hör ju till en högtid som är påhittad och fel</p>
+          </div>
+        </div>
+
+        <div class="card glass-card psalm-card">
+          <h3 class="psalm-title">Ludolph med röda mulen</h3>
+          <p class="psalm-ref">Psaltomortalen 35</p>
+          <div class="psalm-text">
+            <p>Ludolph "The Man" van Ceulen<br>
+            Hette en ovanlig man<br>
+            Som fått sitt hjärta stulet<br>
+            Av en underbar konstant<br>
+            Ludolph fick alltid höra<br>
+            "Sluta räkna fram fler decimaler på pi!!"<br>
+            Att han blev led på detta<br>
+            Ack, ja, det begriper vi</p>
+            <p>Men en mörk decemberkväll<br>
+            Ludolph plötsligt dog <em>(han do-og)</em><br>
+            Och i Leiden restes då<br>
+            gravstenen varpå det stod:</p>
+            <p class="psalm-pi-digits">3,141<br>
+            592653<br>
+            5897-u<br>
+            93 och 2 och 3<br>
+            84626<br>
+            43383<br>
+            279502<br>
+            88 och så vidare …<br>
+            88 och så vida-<br>
+            88 och så vida-<br>
+            88 och så vidareeeeee</p>
+          </div>
+        </div>
+
+        <div class="card glass-card psalm-card">
+          <h3 class="psalm-title">Det strålar en hjärna</h3>
+          <p class="psalm-ref">Psaltomortalen 314</p>
+          <div class="psalm-text">
+            <p>Det strålar en hjärna förunderligt blid<br>
+            i öster på himlen han står<br>
+            Han lyst över världenes oro och strid<br>
+            i över två tusende år<br>
+            När skoldagen blir mörk, hopplösheten total<br>
+            Ja, då skrider han närmre med pass(are) och linjal<br>
+            och då vet man att snart står allt klart</p>
+            <p><em>(Nynna fridfullt)</em></p>
+            <p>Ty matte är härligt för stora och små<br>
+            är glädje och ljuvaste frid<br>
+            är cirklar och halvklot, parabler och så<br>
+            är lycka oändligen blid<br>
+            Är ljus allas ögon då stråla som bäst<br>
+            och stjärnornas sfärer då tindra som mest<br>
+            där Arkimedes är, är även pi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FLAMS OCH TRAMS ========== -->
+    <section id="flams" class="section section-flams">
+      <div class="container">
+        <h2 class="section-title">Flams och trams</h2>
+        <div class="card glass-card">
+          <p>Självklart är piafton inte bara allvar utan till stor del även nöje! Hur skulle man annars med rättvisa kunna fira ett så irrationellt tal som pi?</p>
+        </div>
+
+        <div class="flams-grid">
+          <div class="card glass-card flams-card" data-icon="👗">
+            <h3>Utklädnad</h3>
+            <p>Hos oss klär vi alltid ut oss i lustiga dräkter. En populär variant är att knyta eller tejpa fast en större mängd <strong>runda papperstallrikar</strong> på sig själv. Det förhöjer garanterat stämningen!</p>
+          </div>
+
+          <div class="card glass-card flams-card" data-icon="🎵">
+            <h3>Pimusik</h3>
+            <p>När pifriden har lagt sig lyssnar många på pimusik, till exempel <strong>"American Pie"</strong> av Don McLean eller <strong>"Circle of Life"</strong> från Lejonkungen.</p>
+          </div>
+
+          <div class="card glass-card flams-card" data-icon="📺">
+            <h3>Pipi Långstrumpi</h3>
+            <p>Klockan pi i nio går nästan hälften av Sveriges befolkning in på YouTube och tittar på klippet "Pippi Långstrump – Roliga Moments". Under de Heliga Dagarna (piafton, pidagen och annandag pi) är den officiella stavningen <strong>"Pipi Långstrumpi"</strong>.</p>
+          </div>
+
+          <div class="card glass-card flams-card" data-icon="🧑‍🔬">
+            <h3>Einstein kommer!</h3>
+            <p>En stund senare kommer barnens favoritpiaftonföreteelse, då <strong>Einstein</strong> (oftast en utklädd granne) ringer på dörren. Han brukar säga <em>"Ho, ho, ho, finns här några intelligenta barn?"</em> och sedan dela ut ärtor (peas) och snurror till barnen, oavsett om de är intelligenta eller ej.</p>
+            <p>Många ser även till att hålla <strong>bokcirkelmöte</strong> på piafton och i dessa fall är det kutym att låta Einstein ha med sig tre (pi avrundat till närmaste heltal) förslag på böcker som han presenterar.</p>
+            <p>Innan Einstein går vidare till nästa hus säger han traditionellt <strong>"Och kom ihåg, barn, E&nbsp;=&nbsp;mc²!"</strong> och räcker ut tungan. Barnen brukar räcka ut tungan tillbaka.</p>
+          </div>
+        </div>
+
+        <div class="card glass-card" style="margin-top: 1.5rem;">
+          <p>Någon gång under kvällen ska man om man kan försöka hinna läsa den välbekanta skapelseberättelsen ur <strong>första Cosebok</strong>. Alla kan den förstås utan och innan men det blir en trevlig stund med hela släkten samlad runt Pibeln.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRÄNA PI ========== -->
     <section id="trana" class="section section-practice">
       <div class="container">
         <h2 class="section-title">Träna ditt pi-minne</h2>
@@ -112,6 +313,7 @@
       </div>
     </section>
 
+    <!-- ========== FAKTA ========== -->
     <section id="fakta" class="section section-facts">
       <div class="container">
         <h2 class="section-title">Fascinerande pi-fakta</h2>
@@ -144,10 +346,11 @@
       </div>
     </section>
 
+    <!-- ========== COUNTDOWN ========== -->
     <section id="countdown" class="section section-countdown">
       <div class="container">
-        <h2 class="section-title">Nedräkning till nästa Pi-dag</h2>
-        <div class="countdown-display" id="countdown">
+        <h2 class="section-title">Nedräkning till nästa piafton</h2>
+        <div class="countdown-display" id="countdown-display">
           <div class="countdown-unit">
             <span class="countdown-number" id="cd-days">--</span>
             <span class="countdown-label">dagar</span>
@@ -170,12 +373,27 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== LEVE ========== -->
+    <section class="section section-leve">
+      <div class="container">
+        <div class="leve-content">
+          <p class="leve-intro">Låt oss avsluta med ett pifaldigt leve för pi! Hon leve:</p>
+          <div class="leve-cheers">
+            <p class="leve-hurra" data-delay="0">Hurra!</p>
+            <p class="leve-hurra" data-delay="1">Hurra!</p>
+            <p class="leve-hurra" data-delay="2">Hurra!</p>
+            <p class="leve-h" data-delay="3">H!</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-pi" aria-hidden="true">π</div>
-      <p>Pi-afton — firar π sedan tidernas begynnelse</p>
+      <p>Piafton — firar π sedan tidernas begynnelse</p>
       <p class="footer-small">3.14159265358979323846264338327950288419716939937510...</p>
     </div>
   </footer>

@@ -29,7 +29,7 @@ const PI_DIGITS =
   resize();
   window.addEventListener('resize', resize);
 
-  const digits = '0123456789πeφ∞∑∫';
+  const digits = '0123456789\u03C0e\u03C6\u221E\u2211\u222B';
 
   function draw() {
     ctx.fillStyle = 'rgba(10, 10, 26, 0.06)';
@@ -42,7 +42,6 @@ const PI_DIGITS =
       const x = i * 14;
       const y = drops[i] * 14;
 
-      // Gradient from cyan to purple
       const hue = 180 + (i / columns) * 100;
       ctx.fillStyle = `hsla(${hue}, 100%, 70%, 0.25)`;
       ctx.fillText(char, x, y);
@@ -55,6 +54,30 @@ const PI_DIGITS =
   }
 
   setInterval(draw, 50);
+})();
+
+// ========== NAV ==========
+(function initNav() {
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+
+  // Scrolled state
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile toggle
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+
+  // Close on link click
+  links.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+    });
+  });
 })();
 
 // ========== SCROLL REVEAL ANIMATION ==========
@@ -70,7 +93,7 @@ const PI_DIGITS =
     { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
   );
 
-  document.querySelectorAll('.section-title, .glass-card, .timeline-item, .fact-card').forEach((el) => {
+  document.querySelectorAll('.section-title, .glass-card, .timeline-item, .fact-card, .leve-hurra, .leve-h').forEach((el) => {
     observer.observe(el);
   });
 })();
@@ -97,7 +120,7 @@ const PI_DIGITS =
   }
 
   function hideDecimals() {
-    decimalsEl.innerHTML = '••••••••••';
+    decimalsEl.innerHTML = '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022';
     btnShow.style.display = 'inline-block';
     btnHide.style.display = 'none';
   }
@@ -118,7 +141,6 @@ const PI_DIGITS =
   const feedback = document.getElementById('quiz-feedback');
   const btnCheck = document.getElementById('btn-check');
 
-  // Only allow digits
   input.addEventListener('input', () => {
     input.value = input.value.replace(/[^0-9]/g, '');
   });
@@ -141,48 +163,46 @@ const PI_DIGITS =
     }
 
     if (correctCount === answer.length) {
-      feedback.textContent = `Perfekt! Alla ${correctCount} decimaler rätt! 🎉`;
+      feedback.textContent = 'Perfekt! Alla ' + correctCount + ' decimaler r\u00E4tt!';
       feedback.className = 'quiz-feedback correct';
     } else {
-      feedback.textContent = `${correctCount} rätt av ${answer.length}. Fel på decimal ${correctCount + 1} — du skrev ${answer[correctCount]}, rätt svar var ${PI_DIGITS[correctCount]}.`;
+      feedback.textContent = correctCount + ' r\u00E4tt av ' + answer.length + '. Fel p\u00E5 decimal ' + (correctCount + 1) + ' \u2014 du skrev ' + answer[correctCount] + ', r\u00E4tt svar var ' + PI_DIGITS[correctCount] + '.';
       feedback.className = 'quiz-feedback wrong';
     }
   });
 
-  // Check on Enter
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') btnCheck.click();
   });
 })();
 
-// ========== COUNTDOWN TO NEXT PI DAY ==========
+// ========== COUNTDOWN TO NEXT PIAFTON (March 13) ==========
 (function initCountdown() {
-  function getNextPiDay() {
+  function getNextPiafton() {
     const now = new Date();
     const year = now.getFullYear();
-    let piDay = new Date(year, 2, 14); // March 14
+    let piafton = new Date(year, 2, 13); // March 13
 
-    if (now >= piDay) {
-      // Check if it's still Pi Day (same day)
-      const endOfPiDay = new Date(year, 2, 14, 23, 59, 59, 999);
-      if (now <= endOfPiDay) {
-        return piDay;
+    if (now >= piafton) {
+      const endOfDay = new Date(year, 2, 13, 23, 59, 59, 999);
+      if (now <= endOfDay) {
+        return piafton;
       }
-      piDay = new Date(year + 1, 2, 14);
+      piafton = new Date(year + 1, 2, 13);
     }
-    return piDay;
+    return piafton;
   }
 
   function update() {
     const now = new Date();
-    const target = getNextPiDay();
+    const target = getNextPiafton();
     const diff = target - now;
 
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '🎉';
+      document.getElementById('cd-days').textContent = '\u{1F389}';
       document.getElementById('cd-hours').textContent = 'PI';
-      document.getElementById('cd-minutes').textContent = 'DAG';
-      document.getElementById('cd-seconds').textContent = '🎉';
+      document.getElementById('cd-minutes').textContent = 'AFTON';
+      document.getElementById('cd-seconds').textContent = '\u{1F389}';
       return;
     }
 
