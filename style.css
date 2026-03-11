@@ -116,7 +116,7 @@ body {
 }
 
 .nav-logo {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
@@ -150,7 +150,7 @@ body {
 }
 
 .nav-links a {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -239,14 +239,14 @@ body {
 }
 
 .hero-inscription {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 7.2px;
   letter-spacing: 0.25em;
   font-weight: 600;
 }
 
 .pi-symbol {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(5rem, 14vw, 10rem);
   font-weight: 900;
   color: var(--gold-light);
@@ -279,7 +279,7 @@ body {
 }
 
 .hero h1 {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(2.2rem, 5.5vw, 4.2rem);
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -289,7 +289,7 @@ body {
 }
 
 .hero-date {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 1.15rem;
   color: var(--text-secondary);
   margin-bottom: 1rem;
@@ -323,7 +323,7 @@ body {
 .cta-btn {
   display: inline-block;
   padding: 0.9rem 2.5rem;
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -384,7 +384,7 @@ body {
 
 /* ========== SECTION TITLES ========== */
 .section-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   font-weight: 700;
   text-align: center;
@@ -459,7 +459,7 @@ body {
 }
 
 .menu-label {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -468,7 +468,7 @@ body {
 }
 
 .menu-card h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 1.1rem;
   color: var(--gold-light);
   margin-bottom: 0.5rem;
@@ -487,7 +487,7 @@ body {
 }
 
 .scripture-title {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: 1.4rem;
   color: var(--gold);
   margin-bottom: 0.3rem;
@@ -496,7 +496,7 @@ body {
 }
 
 .scripture-ref {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.75rem;
   color: var(--gold-dim);
   text-align: center;
@@ -539,7 +539,7 @@ body {
   font-style: italic;
   text-align: right;
   margin-top: 1rem;
-  font-family: 'Cinzel', serif !important;
+  font-family: 'Cormorant', serif !important;
   letter-spacing: 0.1em;
 }
 
@@ -571,7 +571,7 @@ body {
 }
 
 .psalm-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 1.15rem;
   color: var(--gold-light);
   text-align: center;
@@ -580,7 +580,7 @@ body {
 }
 
 .psalm-ref {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.7rem;
   color: var(--gold-dim);
   text-align: center;
@@ -635,7 +635,7 @@ body {
 }
 
 .flams-card h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 1rem;
   color: var(--gold-light);
   margin-bottom: 0.8rem;
@@ -696,7 +696,7 @@ body {
   font-size: 0.85rem;
   color: var(--text-secondary);
   margin-bottom: 0.3rem;
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
 }
 
 .decimal-slider input[type="range"] {
@@ -705,7 +705,7 @@ body {
 }
 
 .btn {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.8rem;
   padding: 0.6rem 1.5rem;
   border: none;
@@ -743,7 +743,7 @@ body {
 }
 
 .quiz-section h3 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
   color: var(--gold-light);
@@ -800,7 +800,7 @@ body {
 }
 
 .fact-number {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--gold);
@@ -828,7 +828,7 @@ body {
 }
 
 .countdown-number {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 700;
   color: var(--gold);
@@ -838,7 +838,7 @@ body {
 }
 
 .countdown-label {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant', serif;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -847,7 +847,7 @@ body {
 }
 
 .countdown-separator {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: 2rem;
   color: var(--gold-dim);
   opacity: 0.3;
@@ -882,7 +882,7 @@ body {
 }
 
 .leve-hurra {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(1.8rem, 4.5vw, 3rem);
   font-weight: 700;
   color: var(--gold);
@@ -898,7 +898,7 @@ body {
 }
 
 .leve-h {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   font-weight: 400;
   color: var(--gold-dim);
@@ -950,7 +950,7 @@ body {
 }
 
 .footer-pi {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cormorant SC', serif;
   font-size: 2.5rem;
   color: var(--gold);
   margin-bottom: 1rem;
