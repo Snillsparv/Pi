@@ -167,31 +167,29 @@ const PI_DIGITS =
   resize();
   window.addEventListener('resize', resize);
 
-  // Particle-based fire
+  // Particle-based fire — slow, red-orange
   const particles = [];
-  const maxParticles = 220;
+  const maxParticles = 250;
 
   function spawnParticle() {
-    // Spread across entire width
     const x = Math.random() * W;
     particles.push({
       x: x,
       y: H + 5,
-      originX: x,
-      vx: (Math.random() - 0.5) * 0.8,
-      vy: -(1.5 + Math.random() * 2.5),
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: -(0.6 + Math.random() * 1.2),
       life: 1,
-      decay: 0.008 + Math.random() * 0.012,
-      size: 15 + Math.random() * 25,
-      drift: (Math.random() - 0.5) * 0.02,
+      decay: 0.004 + Math.random() * 0.007,
+      size: 18 + Math.random() * 30,
+      drift: (Math.random() - 0.5) * 0.008,
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
-    // Spawn new particles
-    for (let i = 0; i < 4; i++) {
+    // Spawn new particles (fewer per frame = slower buildup)
+    for (let i = 0; i < 3; i++) {
       if (particles.length < maxParticles) spawnParticle();
     }
 
@@ -200,7 +198,7 @@ const PI_DIGITS =
       p.x += p.vx;
       p.y += p.vy;
       p.vx += p.drift;
-      p.vy *= 0.995;
+      p.vy *= 0.998;
       p.life -= p.decay;
 
       if (p.life <= 0) {
@@ -208,29 +206,29 @@ const PI_DIGITS =
         continue;
       }
 
-      // Color: bright gold -> orange -> dark red -> smoke
+      // Color: bright orange core -> red-orange -> deep red -> dark ember
       let r, g, b, a;
       if (p.life > 0.7) {
-        // Bright core: gold-white
+        // Core: bright orange-yellow
         const t = (p.life - 0.7) / 0.3;
         r = 255;
-        g = 200 + t * 55;
-        b = 80 + t * 120;
-        a = p.life * 0.6;
+        g = 120 + t * 80;
+        b = 20 + t * 30;
+        a = p.life * 0.55;
       } else if (p.life > 0.4) {
-        // Mid: orange
+        // Mid: red-orange
         const t = (p.life - 0.4) / 0.3;
         r = 200 + t * 55;
-        g = 80 + t * 120;
-        b = 10 + t * 70;
-        a = p.life * 0.5;
+        g = 40 + t * 80;
+        b = 5 + t * 15;
+        a = p.life * 0.45;
       } else {
-        // Dying: dark red to smoke
+        // Dying: deep crimson ember
         const t = p.life / 0.4;
-        r = 80 + t * 120;
-        g = 20 + t * 60;
-        b = 5 + t * 5;
-        a = p.life * 0.35;
+        r = 100 + t * 100;
+        g = 10 + t * 30;
+        b = 2 + t * 3;
+        a = p.life * 0.3;
       }
 
       const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * p.life);
@@ -243,12 +241,12 @@ const PI_DIGITS =
       ctx.fill();
     }
 
-    // Subtle glow at the base
-    const baseGlow = ctx.createLinearGradient(0, H, 0, H - 60);
-    baseGlow.addColorStop(0, 'rgba(212, 120, 40, 0.12)');
+    // Warm red-orange glow at the base
+    const baseGlow = ctx.createLinearGradient(0, H, 0, H - 80);
+    baseGlow.addColorStop(0, 'rgba(180, 60, 15, 0.15)');
     baseGlow.addColorStop(1, 'transparent');
     ctx.fillStyle = baseGlow;
-    ctx.fillRect(0, H - 60, W, 60);
+    ctx.fillRect(0, H - 80, W, 80);
 
     requestAnimationFrame(draw);
   }
