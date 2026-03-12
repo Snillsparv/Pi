@@ -926,16 +926,7 @@ body {
 }
 
 .leve-h {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  color: var(--gold-dim);
-  letter-spacing: 0.15em;
   transition-delay: 0.3s;
-}
-
-.leve-h.visible {
-  opacity: 0.6;
-  transform: scale(1);
 }
 
 /* ========== FOOTER ========== */
