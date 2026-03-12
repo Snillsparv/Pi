@@ -458,6 +458,14 @@ body {
   text-align: center;
 }
 
+.menu-icon {
+  font-size: 2.2rem;
+  color: var(--gold-dim);
+  margin-bottom: 0.8rem;
+  opacity: 0.6;
+  line-height: 1;
+}
+
 .menu-label {
   font-family: 'Cormorant', serif;
   font-size: 0.65rem;
@@ -477,6 +485,26 @@ body {
 
 .menu-card p {
   font-size: 0.95rem;
+}
+
+.rockring-ornament {
+  text-align: center;
+  margin: 1.5rem auto 0;
+  max-width: 400px;
+}
+
+.rockring-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ========== NOTE ORNAMENTS ========== */
+.note-ornament {
+  color: var(--gold-dim);
+  font-size: 0.75em;
+  opacity: 0.5;
+  margin: 0 0.3em;
+  vertical-align: middle;
 }
 
 /* ========== PIBELN / SCRIPTURE ========== */
