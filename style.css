@@ -713,6 +713,10 @@ body {
   font-style: italic;
 }
 
+.practice-intro a {
+  color: var(--gold);
+}
+
 .pi-display {
   font-family: 'Space Mono', monospace;
   font-size: 1.1rem;
