@@ -688,6 +688,10 @@ body {
   font-size: 1.4rem;
 }
 
+.flams-card a {
+  color: var(--gold-light);
+}
+
 .flams-card h3 {
   font-family: 'Cormorant', serif;
   font-size: 1rem;
