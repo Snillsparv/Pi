@@ -1,19 +1,19 @@
 /* ========== VARIABLES & RESET ========== */
 :root {
   --bg-dark: #060503;
-  --bg-parchment: #100d08;
-  --bg-card: rgba(26, 21, 14, 0.8);
-  --gold: #d4a54a;
-  --gold-light: #f0d48a;
-  --gold-dim: #8b7340;
-  --gold-glow: rgba(212, 165, 74, 0.3);
-  --bronze: #a0764a;
-  --crimson: #8b2d2d;
-  --text-primary: #d4c5a9;
-  --text-secondary: #9e917a;
-  --text-scripture: #c8b890;
-  --border-gold: rgba(212, 165, 74, 0.15);
-  --border-warm: rgba(160, 118, 74, 0.1);
+  --bg-parchment: #14100a;
+  --bg-card: rgba(30, 24, 16, 0.85);
+  --gold: #daa520;
+  --gold-light: #f2d680;
+  --gold-dim: #a08030;
+  --gold-glow: rgba(218, 165, 32, 0.35);
+  --bronze: #c08040;
+  --crimson: #a03030;
+  --text-primary: #e0d4b8;
+  --text-secondary: #b8a888;
+  --text-scripture: #d8c8a0;
+  --border-gold: rgba(218, 165, 32, 0.2);
+  --border-warm: rgba(192, 128, 64, 0.12);
   --glow-gold: 0 0 30px rgba(212, 165, 74, 0.15);
   --glow-candle: 0 0 60px rgba(212, 165, 74, 0.08);
 }
@@ -397,7 +397,7 @@ body {
 
 /* ========== GLASS CARDS (parchment style) ========== */
 .glass-card {
-  background: linear-gradient(135deg, rgba(26, 21, 14, 0.9), rgba(20, 16, 10, 0.85));
+  background: linear-gradient(135deg, rgba(32, 26, 16, 0.9), rgba(24, 20, 12, 0.85));
   border: 1px solid var(--border-gold);
   border-radius: 2px;
   padding: 2rem;
@@ -512,7 +512,7 @@ body {
 .scripture-card {
   max-width: 750px;
   margin: 0 auto 2.5rem;
-  background: linear-gradient(135deg, rgba(30, 24, 14, 0.95), rgba(22, 18, 10, 0.9));
+  background: linear-gradient(135deg, rgba(36, 28, 16, 0.95), rgba(28, 22, 12, 0.9));
 }
 
 .scripture-title {
