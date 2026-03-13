@@ -720,6 +720,10 @@ picture.pic-medium {
   color: var(--gold);
 }
 
+.practice-card a {
+  color: var(--gold);
+}
+
 .pi-display {
   font-family: 'Space Mono', monospace;
   font-size: 1.1rem;
