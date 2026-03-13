@@ -61,7 +61,7 @@
         </svg>
       </div>
       <div class="pi-symbol" aria-hidden="true">π</div>
-      <h1>Piafton</h1>
+      <h1>piafton</h1>
       <p class="hero-date">
         <span class="date-highlight">13 mars</span> — dagen före pidagen
       </p>
@@ -95,20 +95,38 @@
         </div>
         <div class="menu-grid">
           <div class="card glass-card menu-card">
+            <div class="menu-icon" aria-hidden="true">&#9675;</div>
             <div class="menu-label">Förrätt</div>
             <h3>Semlor</h3>
             <p>(så runda som möjligt)</p>
           </div>
           <div class="card glass-card menu-card">
+            <div class="menu-icon" aria-hidden="true">&#9661; &#9661; &#9661;</div>
             <div class="menu-label">Huvudrätt</div>
             <h3>Tre sorters paj</h3>
             <p>till exempel svamppaj, grönkålspaj och matpaj</p>
           </div>
           <div class="card glass-card menu-card">
+            <div class="menu-icon" aria-hidden="true">&#9678;</div>
             <div class="menu-label">Efterrätt</div>
             <h3>Pannkakor</h3>
             <p>(med t.ex. nougatkräm)</p>
           </div>
+        </div>
+        <div class="rockring-ornament" aria-hidden="true">
+          <svg viewBox="0 0 200 30" class="rockring-svg">
+            <ellipse cx="100" cy="15" rx="90" ry="12" fill="none" stroke="url(#gold-grad-ring)" stroke-width="2.5" opacity="0.5"/>
+            <ellipse cx="100" cy="15" rx="90" ry="12" fill="none" stroke="url(#gold-grad-ring)" stroke-width="0.5" opacity="0.2" stroke-dasharray="4 4"/>
+            <defs>
+              <linearGradient id="gold-grad-ring" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="transparent"/>
+                <stop offset="30%" stop-color="#d4a54a"/>
+                <stop offset="50%" stop-color="#f0d48a"/>
+                <stop offset="70%" stop-color="#d4a54a"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
         <div class="card glass-card" style="margin-top: 1.5rem;">
           <p>Enligt Pibeln var det denna enkla måltid Arkimedes <em>(orubbade varde hans cirklar)</em> förtärde innan han dödades av de invaderande romarna. Den anses symbolisera den heliga <strong>pienigheten</strong> eftersom den innehåller 3,14 pajer (semlor anses enligt denna tolkning till ca 14% kunna sägas vara pajer). Pannkakorna är ett modernare tillägg på svenskarnas pibord.</p>
@@ -194,7 +212,7 @@
     <!-- ========== PISALMER ========== -->
     <section id="pisalmer" class="section section-pisalmer">
       <div class="container">
-        <h2 class="section-title">Pisalmer</h2>
+        <h2 class="section-title"><span class="note-ornament" aria-hidden="true">&#9833;</span> Pisalmer <span class="note-ornament" aria-hidden="true">&#9834;</span></h2>
         <p class="section-intro">Även pisalmer och pisånger hör förstås piafton till. Här är tre favoriter:</p>
 
         <div class="card glass-card psalm-card">
@@ -404,7 +422,7 @@
             <p class="leve-hurra" data-delay="0">Hurra!</p>
             <p class="leve-hurra" data-delay="1">Hurra!</p>
             <p class="leve-hurra" data-delay="2">Hurra!</p>
-            <p class="leve-h" data-delay="3">H!</p>
+            <p class="leve-hurra leve-h" data-delay="3">H!</p>
           </div>
         </div>
       </div>
@@ -425,5 +443,7 @@
   </div>
 
   <script src="script.js"></script>
+  <script data-goatcounter="https://snillsparv.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

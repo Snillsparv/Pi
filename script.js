@@ -355,10 +355,10 @@ const PI_DIGITS =
     const diff = target - now;
 
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '\u2726';
-      document.getElementById('cd-hours').textContent = 'PI';
-      document.getElementById('cd-minutes').textContent = 'AFTON';
-      document.getElementById('cd-seconds').textContent = '\u2726';
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-minutes').textContent = '00';
+      document.getElementById('cd-seconds').textContent = '00';
       return;
     }
 
