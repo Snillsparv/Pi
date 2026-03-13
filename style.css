@@ -397,13 +397,23 @@ body {
 }
 
 /* ========== SECTION IMAGES ========== */
-.section-img {
+picture {
   display: block;
   max-width: 100%;
+  margin: 1.5rem auto;
+}
+
+picture.pic-medium {
+  max-width: 600px;
+}
+
+.section-img {
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: 2px;
   border: 1px solid var(--border-gold);
-  margin: 1.5rem auto;
+  margin: 0;
   opacity: 0.9;
   transition: opacity 0.4s ease;
 }
@@ -412,13 +422,6 @@ body {
   opacity: 1;
 }
 
-.section-img-small {
-  max-width: 400px;
-}
-
-.section-img-medium {
-  max-width: 600px;
-}
 
 /* ========== GLASS CARDS (parchment style) ========== */
 .glass-card {
