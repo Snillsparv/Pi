@@ -874,6 +874,10 @@ body {
   text-align: center;
 }
 
+.fact-card a {
+  color: var(--gold);
+}
+
 .fact-number {
   font-family: 'Cormorant SC', serif;
   font-size: 1.8rem;
