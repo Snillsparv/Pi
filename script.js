@@ -301,6 +301,20 @@ const PI_DIGITS =
     input.value = input.value.replace(/[^0-9]/g, '');
   });
 
+  // Result display element (replaces input visually during check)
+  let resultEl = document.createElement('div');
+  resultEl.className = 'pi-input pi-result';
+  resultEl.style.display = 'none';
+  input.parentNode.insertBefore(resultEl, input.nextSibling);
+
+  resultEl.addEventListener('click', () => {
+    resultEl.style.display = 'none';
+    input.style.display = '';
+    input.focus();
+    feedback.textContent = '';
+    feedback.className = 'quiz-feedback';
+  });
+
   btnCheck.addEventListener('click', () => {
     const answer = input.value.trim();
     if (!answer) {
@@ -310,19 +324,22 @@ const PI_DIGITS =
     }
 
     let correctCount = 0;
+    let html = '';
     for (let i = 0; i < answer.length; i++) {
-      if (answer[i] === PI_DIGITS[i]) {
-        correctCount++;
-      } else {
-        break;
-      }
+      const isCorrect = answer[i] === PI_DIGITS[i];
+      if (isCorrect && correctCount === i) correctCount++;
+      html += '<span class="' + (isCorrect ? 'pi-digit-correct' : 'pi-digit-wrong') + '">' + answer[i] + '</span>';
     }
+
+    resultEl.innerHTML = html;
+    resultEl.style.display = '';
+    input.style.display = 'none';
 
     if (correctCount === answer.length) {
       feedback.textContent = 'Fullkomligt! Alla ' + correctCount + ' decimaler korrekt.';
       feedback.className = 'quiz-feedback correct';
     } else {
-      feedback.textContent = correctCount + ' r\u00E4tt av ' + answer.length + '. Vilse vid decimal ' + (correctCount + 1) + ' \u2014 du skrev ' + answer[correctCount] + ', sanningen \u00E4r ' + PI_DIGITS[correctCount] + '.';
+      feedback.textContent = correctCount + ' r\u00E4tt i rad av ' + answer.length + '. Klicka p\u00E5 siffrorna f\u00F6r att f\u00F6rs\u00F6ka igen.';
       feedback.className = 'quiz-feedback wrong';
     }
   });

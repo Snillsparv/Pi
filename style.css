@@ -842,6 +842,23 @@ body {
   color: var(--crimson);
 }
 
+.pi-result {
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  line-height: 2;
+  word-break: break-all;
+}
+
+.pi-digit-correct {
+  color: #7da667;
+}
+
+.pi-digit-wrong {
+  color: #d04040;
+  text-decoration: underline wavy;
+  text-underline-offset: 3px;
+}
+
 /* ========== FACTS GRID ========== */
 .facts-grid {
   display: grid;
